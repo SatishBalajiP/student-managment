@@ -1,4 +1,4 @@
-package contrllers
+package controllers
 
 import (
 	"encoding/json"
@@ -21,10 +21,10 @@ func GetStudent(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
-func GetBookById(w http.ResponseWriter, r *http.Request) {
+func GetStudentById(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	StudentId := vars["StudentId"]
-	ID, err := strconv.ParseInt(StudentId, 0, 0)
+	studentId := vars["studentID"]
+	ID, err := strconv.ParseInt(studentId, 0, 0)
 	if err != nil {
 		fmt.Println("error while parsing")
 	}
@@ -46,7 +46,7 @@ func CreateStudent(w http.ResponseWriter, r *http.Request) {
 
 func DeleteStudent(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	studentId := vars["StudentId"]
+	studentId := vars["studentID"]
 	ID, err := strconv.ParseInt(studentId, 0, 0)
 	if err != nil {
 		fmt.Println("error while parsing")
@@ -59,10 +59,10 @@ func DeleteStudent(w http.ResponseWriter, r *http.Request) {
 }
 
 func UpdateStudent(w http.ResponseWriter, r *http.Request) {
-	updateStudent := &models.UpdateStudent{}
+	updateStudent := &models.Student{}
 	utils.ParseBody(r, updateStudent)
 	vars := mux.Vars(r)
-	studentId := vars["Studentid"]
+	studentId := vars["studentID"]
 	ID, err := strconv.ParseInt(studentId, 0, 0)
 	if err != nil {
 		fmt.Println("error while parsing")

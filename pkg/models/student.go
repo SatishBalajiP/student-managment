@@ -40,6 +40,6 @@ func GetStudentById(Id int64) (*Student, *gorm.DB) {
 
 func DeleteStudent(Id int64) Student {
 	var student Student
-	db.Where("Id=?", Id).Delete(student)
+	db.Where("ID=?", Id).Delete(student)
 	return student
 }
