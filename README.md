@@ -5,7 +5,8 @@
 - The main.go file is in the folder cmd/main
 
 ## To set the mysql database
-- change the username, password and database in the app.go file. Present in the folder pkg/config/app.go
+- change the username, password and database in the app.go file (line 13).
+- app.go is in the folder pkg/config/app.go
 
 ## Output in postman
 - To show all data, send request (GET): "localhost:9010/student/"
